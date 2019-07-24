@@ -17,7 +17,6 @@
 		75A4313F22D65DC0000308DC /* NutriDeskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4313E22D65DC0000308DC /* NutriDeskUITests.swift */; };
 		75A4314D22D69EE4000308DC /* MeusPacientesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4314C22D69EE4000308DC /* MeusPacientesTableViewController.swift */; };
 		75A4314F22DD12EB000308DC /* NovosPacientesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4314E22DD12EB000308DC /* NovosPacientesTableViewController.swift */; };
-		75A4315122E68AF6000308DC /* UITextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4315022E68AF6000308DC /* UITextFieldController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +53,6 @@
 		75A4314022D65DC0000308DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75A4314C22D69EE4000308DC /* MeusPacientesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeusPacientesTableViewController.swift; sourceTree = "<group>"; };
 		75A4314E22DD12EB000308DC /* NovosPacientesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovosPacientesTableViewController.swift; sourceTree = "<group>"; };
-		75A4315022E68AF6000308DC /* UITextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +108,6 @@
 				75A4311D22D65DBC000308DC /* ViewController.swift */,
 				75A4314C22D69EE4000308DC /* MeusPacientesTableViewController.swift */,
 				75A4314E22DD12EB000308DC /* NovosPacientesTableViewController.swift */,
-				75A4315022E68AF6000308DC /* UITextFieldController.swift */,
 				75A4312522D65DC0000308DC /* Assets.xcassets */,
 				75A4312722D65DC0000308DC /* LaunchScreen.storyboard */,
 				75A4312A22D65DC0000308DC /* Info.plist */,
@@ -271,7 +268,6 @@
 				75A4311E22D65DBC000308DC /* ViewController.swift in Sources */,
 				75A4314F22DD12EB000308DC /* NovosPacientesTableViewController.swift in Sources */,
 				75A4312422D65DBC000308DC /* NutriDesk.xcdatamodeld in Sources */,
-				75A4315122E68AF6000308DC /* UITextFieldController.swift in Sources */,
 				75A4314D22D69EE4000308DC /* MeusPacientesTableViewController.swift in Sources */,
 				75A4311C22D65DBC000308DC /* AppDelegate.swift in Sources */,
 			);

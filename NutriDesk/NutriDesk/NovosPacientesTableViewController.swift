@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class NovosPacientesTableViewController: UITableViewController, UITextFieldDelegate {
     
@@ -22,6 +23,7 @@ class NovosPacientesTableViewController: UITableViewController, UITextFieldDeleg
     @IBOutlet weak var cidade: UITextField!
     @IBOutlet weak var estado: UITextField!
     
+    var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +31,41 @@ class NovosPacientesTableViewController: UITableViewController, UITextFieldDeleg
         let cellId = "cellId"
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
-
+        
     }
     
+    @IBAction func Salvar(_ sender: Any) {
+        
+//        if nome?.text != "" && genero?.text != "" && email?.text != "" && endereco?.text != "" && bairro?.text != "" && cidade?.text != "" && estado?.text != ""{
+//
+//
+        if nome?.text != "" && datanasc?.text != "" && genero?.text != "" && telefone?.text != "" && email?.text != "" && cpf?.text != "" && cep?.text != "" && endereco?.text != "" && bairro?.text != "" && cidade?.text != "" && estado?.text != ""{
+            
+            let novoPaciente = NSEntityDescription.insertNewObject(forEntityName: "Paciente", into: context)
+            novoPaciente.setValue(self.nome!.text, forKey: "nome")
+            novoPaciente.setValue(self.datanasc!.text, forKey: "datanasc")
+            novoPaciente.setValue(self.genero!.text, forKey: "genero")
+            novoPaciente.setValue(self.telefone!.text, forKey: "telefone")
+            novoPaciente.setValue(self.email!.text, forKey: "email")
+            novoPaciente.setValue(self.cpf!.text, forKey: "cpf")
+            novoPaciente.setValue(self.cep!.text, forKey: "cep")
+            novoPaciente.setValue(self.endereco!.text, forKey: "endereco")
+            novoPaciente.setValue(self.bairro!.text, forKey: "bairro")
+            novoPaciente.setValue(self.cidade!.text, forKey: "cidade")
+            novoPaciente.setValue(self.estado!.text, forKey: "estado")
+            
+            do {
+                try context.save()
+            }catch{
+                print(error)
+            }
+            
+        }else{
+            print("preencha tudo")
+        }
+    
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -58,24 +92,6 @@ class NovosPacientesTableViewController: UITableViewController, UITextFieldDeleg
             tableView.endUpdates()
         }
     }
-
-    
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        return 4
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 11
-//    }
-//
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
-//
-//        cell.textLabel?.text = "Something"
-//
-//        return cell
-//    }
 
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

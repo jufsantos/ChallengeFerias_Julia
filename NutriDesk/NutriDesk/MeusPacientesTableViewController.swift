@@ -7,11 +7,20 @@
 //
 
 import UIKit
+import CoreData
 
 class MeusPacientesTableViewController: UITableViewController {
 
+    var userArray: [Paciente] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        tableView.delegate = self
+//        tableView.dataSource = self
+//
+        self.fetchData()
+        self.tableView.reloadData()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -24,23 +33,50 @@ class MeusPacientesTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return userArray.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cellNome = tableView.dequeueReusableCell(withIdentifier: "cellNome", for: indexPath)
+        let nomePaciente = userArray[indexPath.row]
+        cellNome.textLabel!.text = nomePaciente.nome!
 
-        // Configure the cell...
-
-        return cell
+        return cellNome
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        if editingStyle == .delete{
+            let user = userArray[indexPath.row]
+            context.delete(user)
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            
+            do{
+                userArray = try context.fetch(Paciente.fetchRequest())
+            }catch{
+                print(error)
+            }
+        }
+    }
+    
+    func fetchData(){
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        do{
+            userArray = try context.fetch(Paciente.fetchRequest())
+        }catch{
+            print(error)
+        }
+        tableView.reloadData()
+    }
+ 
 
     /*
     // Override to support conditional editing of the table view.
