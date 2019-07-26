@@ -1,29 +1,28 @@
 //
-//  MeusPacientesTableViewController.swift
+//  DadosPacienteTableViewController.swift
 //  NutriDesk
 //
-//  Created by Julia Santos on 10/07/19.
+//  Created by Julia Santos on 25/07/19.
 //  Copyright © 2019 Julia Santos. All rights reserved.
 //
 
 import UIKit
 import CoreData
-import UserNotifications
 
-class MeusPacientesTableViewController: UITableViewController {
-
+class DadosPacienteTableViewController: UITableViewController {
+    
     let container = NSPersistentContainer(name: "NutriDesk")
     
     var appDelegate = UIApplication.shared.delegate as? AppDelegate
-
+    
     var userArray: [Paciente] = []
+    
+//    var DataArray: [Paciente] = []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
-
         self.fetchData()
         self.tableView.reloadData()
 
@@ -31,28 +30,33 @@ class MeusPacientesTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userArray.count
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellNome = tableView.dequeueReusableCell(withIdentifier: "cellNome", for: indexPath)
-        let nomePaciente = userArray[indexPath.row]
-        cellNome.textLabel!.text = nomePaciente.nome!
-
-        return cellNome
+        let cellDados = tableView.dequeueReusableCell(withIdentifier: "cellDados", for: indexPath)
+        let dadoPaciente = userArray[indexPath.row]
+        cellDados.textLabel!.text = dadoPaciente.nome!
+        cellDados.textLabel!.text = dadoPaciente.datanasc!
+        cellDados.textLabel!.text = dadoPaciente.genero!
+        cellDados.textLabel!.text = dadoPaciente.telefone!
+        cellDados.textLabel!.text = dadoPaciente.email!
+        
+        
+        return cellDados
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-
+        
         if editingStyle == .delete {
             userArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -63,6 +67,7 @@ class MeusPacientesTableViewController: UITableViewController {
             print("nao apagou")
         }
     }
+    
     
     func fetchData(){
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -75,26 +80,55 @@ class MeusPacientesTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
 
-    
+    // MARK: - Table view data source
+
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
+//
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return 0
+//    }
+
+    /*
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
+        return cell
+    }
+    */
+
+    /*
+    // Override to support conditional editing of the table view.
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    */
+
+    /*
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }    
+    }
+    */
+
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {

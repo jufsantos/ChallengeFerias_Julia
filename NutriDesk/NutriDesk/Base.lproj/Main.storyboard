@@ -104,6 +104,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="TQ0-V6-OaJ" kind="show" id="XSu-pZ-oJ4"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -111,15 +114,39 @@
                             <outlet property="delegate" destination="EX2-Rd-1T5" id="tcz-wc-Fn3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Meus Pacientes" id="qeh-ub-CI7">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="fbL-2V-jZO">
-                            <color key="tintColor" red="0.72348958253860474" green="0.26813822984695435" blue="0.19996637105941772" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Meus Pacientes" id="qeh-ub-CI7"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2I2-UL-6mZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2713.04347826087" y="112.5"/>
+        </scene>
+        <!--Dados do Paciente-->
+        <scene sceneID="x37-pZ-HUH">
+            <objects>
+                <tableViewController title="Dados do Paciente" id="TQ0-V6-OaJ" customClass="DadosPacienteTableViewController" customModule="NutriDesk" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VXJ-2l-sxc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellDados" id="ZSZ-3D-0se">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZSZ-3D-0se" id="Qxd-SO-67O">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="TQ0-V6-OaJ" id="SAb-mm-yEb"/>
+                            <outlet property="delegate" destination="TQ0-V6-OaJ" id="qnC-7I-lhn"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tyr-aD-GLp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3648" y="113"/>
         </scene>
         <!--Novos Pacientes-->
         <scene sceneID="8KX-KG-j3L">
@@ -699,9 +726,16 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V2R-7e-Ugz">
                                                     <rect key="frame" x="8" y="6" width="398" height="30"/>
+                                                    <color key="backgroundColor" red="0.72348958249999995" green="0.26813822980000002" blue="0.19996637110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="tintColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" title="Salvar">
-                                                        <color key="titleColor" red="0.72348958253860474" green="0.26813822984695435" blue="0.19996637105941772" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="titleColor" red="0.9799627662" green="0.97753137349999997" blue="0.90979552269999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="Salvar:" destination="i6y-kN-tz3" eventType="touchUpInside" id="Zlb-ts-DPO"/>
                                                     </connections>
@@ -725,7 +759,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Novos Pacientes" id="dUY-ai-b57"/>
                     <connections>
+                        <outlet property="agua" destination="FMw-lA-R5t" id="id7-sl-DBK"/>
+                        <outlet property="aguaPorcent" destination="TuY-oL-sDm" id="ilp-ap-z3L"/>
+                        <outlet property="altura" destination="75F-jJ-aIN" id="8mL-Tb-Ej6"/>
                         <outlet property="bairro" destination="L7O-6v-GFA" id="5aA-d1-RoT"/>
+                        <outlet property="button" destination="V2R-7e-Ugz" id="9yW-xb-sud"/>
                         <outlet property="cep" destination="QCc-aS-U3G" id="Z1N-3k-kbJ"/>
                         <outlet property="cidade" destination="enH-ho-wcV" id="dJD-qB-IJd"/>
                         <outlet property="cpf" destination="idf-Pv-NWo" id="lvu-cY-DTv"/>
@@ -734,7 +772,19 @@
                         <outlet property="endereco" destination="cWu-M4-jLd" id="5td-R7-XtM"/>
                         <outlet property="estado" destination="TR7-wX-QpX" id="FdE-rx-WhS"/>
                         <outlet property="genero" destination="vMX-Jf-iBJ" id="rxa-Hm-ofw"/>
+                        <outlet property="gorduraPorcent" destination="583-JC-1s7" id="srX-Qh-SDH"/>
+                        <outlet property="idadeMeta" destination="TS4-Lm-RJ8" id="UFj-HX-4Mn"/>
+                        <outlet property="massaGorda" destination="qom-br-r5b" id="78e-pL-FaW"/>
+                        <outlet property="massaGordaPorcent" destination="WWZ-0O-msq" id="jfG-th-ddo"/>
+                        <outlet property="massaMagra" destination="GOS-Rc-8e9" id="717-n1-zdg"/>
+                        <outlet property="massaMagraPorcent" destination="aes-Yj-pdb" id="So8-cL-7hS"/>
                         <outlet property="nome" destination="69b-sJ-VrQ" id="Liw-1D-v9P"/>
+                        <outlet property="pesoAtual" destination="HcF-bv-1MS" id="W5p-af-baP"/>
+                        <outlet property="pesoIdeal" destination="BIm-RI-XTr" id="evT-vw-xUE"/>
+                        <outlet property="pesoMuscular" destination="3ZW-KJ-PP5" id="1Fq-hq-1Pj"/>
+                        <outlet property="pesoOsseo" destination="oPe-4T-hG7" id="2mT-j3-Z2j"/>
+                        <outlet property="pesoResidual" destination="7zJ-OI-Ocj" id="IHC-PV-osd"/>
+                        <outlet property="resultadoImc" destination="HGa-HM-3cr" id="CBT-tJ-TTt"/>
                         <outlet property="telefone" destination="AJW-l3-zTb" id="8FD-bu-QVC"/>
                     </connections>
                 </tableViewController>

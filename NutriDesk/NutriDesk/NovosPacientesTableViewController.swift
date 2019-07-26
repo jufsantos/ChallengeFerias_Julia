@@ -23,6 +23,25 @@ class NovosPacientesTableViewController: UITableViewController, UITextFieldDeleg
     @IBOutlet weak var cidade: UITextField!
     @IBOutlet weak var estado: UITextField!
     
+    @IBOutlet weak var pesoAtual: UITextField!
+    @IBOutlet weak var altura: UITextField!
+    @IBOutlet weak var resultadoImc: UITextField!
+    
+    @IBOutlet weak var pesoIdeal: UITextField!
+    @IBOutlet weak var massaGordaPorcent: UITextField!
+    @IBOutlet weak var massaGorda: UITextField!
+    @IBOutlet weak var massaMagraPorcent: UITextField!
+    @IBOutlet weak var massaMagra: UITextField!
+    @IBOutlet weak var aguaPorcent: UITextField!
+    @IBOutlet weak var agua: UITextField!
+    @IBOutlet weak var pesoOsseo: UITextField!
+    @IBOutlet weak var pesoResidual: UITextField!
+    @IBOutlet weak var pesoMuscular: UITextField!
+    @IBOutlet weak var gorduraPorcent: UITextField!
+    @IBOutlet weak var idadeMeta: UITextField!
+    
+    let container = NSPersistentContainer(name: "NutriDesk")
+    
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
@@ -31,15 +50,23 @@ class NovosPacientesTableViewController: UITableViewController, UITextFieldDeleg
         let cellId = "cellId"
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
-        
     }
     
-    @IBAction func Salvar(_ sender: Any) {
+    @IBOutlet weak var button: UIButton!
+    
+    @IBAction func Salvar(_ sender: UIButton) {
         
-//        if nome?.text != "" && genero?.text != "" && email?.text != "" && endereco?.text != "" && bairro?.text != "" && cidade?.text != "" && estado?.text != ""{
-//
-//
-        if nome?.text != "" && datanasc?.text != "" && genero?.text != "" && telefone?.text != "" && email?.text != "" && cpf?.text != "" && cep?.text != "" && endereco?.text != "" && bairro?.text != "" && cidade?.text != "" && estado?.text != ""{
+        sender.pulsate()
+        
+        if button.isSelected == true {
+            button.backgroundColor = #colorLiteral(red: 0.7842261195, green: 0.2227489948, blue: 0.1612006426, alpha: 1)
+            button.setTitleColor(#colorLiteral(red: 0.9804118276, green: 0.977494061, blue: 0.9026097059, alpha: 1), for: .normal)
+        } else {
+            button.backgroundColor = #colorLiteral(red: 0.9804118276, green: 0.977494061, blue: 0.9026097059, alpha: 1)
+            button.setTitleColor(#colorLiteral(red: 0.7821950912, green: 0.2211945653, blue: 0.1616751552, alpha: 1), for: .normal)
+        }
+        
+        if nome?.text != "" && datanasc?.text != "" && genero?.text != "" && telefone?.text != "" && email?.text != "" && cpf?.text != "" && cep?.text != "" && endereco?.text != "" && bairro?.text != "" && cidade?.text != "" && estado?.text != "" && pesoAtual?.text != "" && altura?.text != "" && resultadoImc?.text != "" && pesoIdeal?.text != "" && massaGordaPorcent?.text != "" && massaGorda?.text != "" && massaMagraPorcent?.text != "" && massaMagra?.text != "" && aguaPorcent?.text != "" && agua?.text != "" && pesoOsseo?.text != "" && pesoResidual?.text != "" && pesoMuscular?.text != "" && gorduraPorcent?.text != "" && idadeMeta?.text != "" {
             
             let novoPaciente = NSEntityDescription.insertNewObject(forEntityName: "Paciente", into: context)
             novoPaciente.setValue(self.nome!.text, forKey: "nome")
@@ -54,6 +81,23 @@ class NovosPacientesTableViewController: UITableViewController, UITextFieldDeleg
             novoPaciente.setValue(self.cidade!.text, forKey: "cidade")
             novoPaciente.setValue(self.estado!.text, forKey: "estado")
             
+            novoPaciente.setValue(self.pesoAtual!.text, forKey: "pesoAtual")
+            novoPaciente.setValue(self.altura!.text, forKey: "altura")
+            novoPaciente.setValue(self.resultadoImc!.text, forKey: "resultadoImc")
+            
+            novoPaciente.setValue(self.pesoIdeal!.text, forKey: "pesoIdeal")
+            novoPaciente.setValue(self.massaGordaPorcent!.text, forKey: "massaGordaPorcent")
+            novoPaciente.setValue(self.massaGorda!.text, forKey: "massaGorda")
+            novoPaciente.setValue(self.massaMagraPorcent!.text, forKey: "massaMagraPorcent")
+            novoPaciente.setValue(self.massaMagra!.text, forKey: "massaMagra")
+            novoPaciente.setValue(self.aguaPorcent!.text, forKey: "aguaPorcent")
+            novoPaciente.setValue(self.agua!.text, forKey: "agua")
+            novoPaciente.setValue(self.pesoOsseo!.text, forKey: "pesoOsseo")
+            novoPaciente.setValue(self.pesoResidual!.text, forKey: "pesoResidual")
+            novoPaciente.setValue(self.pesoMuscular!.text, forKey: "pesoMuscular")
+            novoPaciente.setValue(self.gorduraPorcent!.text, forKey: "gorduraPorcent")
+            novoPaciente.setValue(self.idadeMeta!.text, forKey: "idadeMeta")
+            
             do {
                 try context.save()
             }catch{
@@ -64,11 +108,6 @@ class NovosPacientesTableViewController: UITableViewController, UITextFieldDeleg
             print("preencha tudo")
         }
     
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     var celulaEstaGrande:Bool = false
@@ -96,7 +135,7 @@ class NovosPacientesTableViewController: UITableViewController, UITextFieldDeleg
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        return false
     }
     
     private func configureTextFields(){
@@ -111,6 +150,23 @@ class NovosPacientesTableViewController: UITableViewController, UITextFieldDeleg
         bairro.delegate = self
         cidade.delegate = self
         estado.delegate = self
+        
+        pesoAtual.delegate = self
+        altura.delegate = self
+        resultadoImc.delegate = self
+        
+        pesoIdeal.delegate = self
+        massaGordaPorcent.delegate = self
+        massaGorda.delegate = self
+        massaMagraPorcent.delegate = self
+        massaMagra.delegate = self
+        aguaPorcent.delegate = self
+        agua.delegate = self
+        pesoOsseo.delegate = self
+        pesoResidual.delegate = self
+        pesoMuscular.delegate = self
+        gorduraPorcent.delegate = self
+        idadeMeta.delegate = self
         
     }
     

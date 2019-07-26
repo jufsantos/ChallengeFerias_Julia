@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7564E83322EA31310010D607 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7564E83222EA31310010D607 /* UIButtonExtension.swift */; };
+		7564E83522EAA0810010D607 /* DadosPacienteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7564E83422EAA0810010D607 /* DadosPacienteTableViewController.swift */; };
 		75A4311C22D65DBC000308DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4311B22D65DBC000308DC /* AppDelegate.swift */; };
 		75A4311E22D65DBC000308DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4311D22D65DBC000308DC /* ViewController.swift */; };
 		75A4312122D65DBC000308DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75A4311F22D65DBC000308DC /* Main.storyboard */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7564E83222EA31310010D607 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		7564E83422EAA0810010D607 /* DadosPacienteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadosPacienteTableViewController.swift; sourceTree = "<group>"; };
 		75A4311822D65DBC000308DC /* NutriDesk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NutriDesk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A4311B22D65DBC000308DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75A4311D22D65DBC000308DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,10 +112,12 @@
 				75A4311D22D65DBC000308DC /* ViewController.swift */,
 				75A4314C22D69EE4000308DC /* MeusPacientesTableViewController.swift */,
 				75A4314E22DD12EB000308DC /* NovosPacientesTableViewController.swift */,
+				7564E83422EAA0810010D607 /* DadosPacienteTableViewController.swift */,
 				75A4312522D65DC0000308DC /* Assets.xcassets */,
 				75A4312722D65DC0000308DC /* LaunchScreen.storyboard */,
 				75A4312A22D65DC0000308DC /* Info.plist */,
 				75A4312222D65DBC000308DC /* NutriDesk.xcdatamodeld */,
+				7564E83222EA31310010D607 /* UIButtonExtension.swift */,
 			);
 			path = NutriDesk;
 			sourceTree = "<group>";
@@ -265,11 +271,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7564E83522EAA0810010D607 /* DadosPacienteTableViewController.swift in Sources */,
 				75A4311E22D65DBC000308DC /* ViewController.swift in Sources */,
 				75A4314F22DD12EB000308DC /* NovosPacientesTableViewController.swift in Sources */,
 				75A4312422D65DBC000308DC /* NutriDesk.xcdatamodeld in Sources */,
 				75A4314D22D69EE4000308DC /* MeusPacientesTableViewController.swift in Sources */,
 				75A4311C22D65DBC000308DC /* AppDelegate.swift in Sources */,
+				7564E83322EA31310010D607 /* UIButtonExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

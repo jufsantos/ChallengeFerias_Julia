@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14492.1" systemVersion="18G84" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Paciente" representedClassName="Paciente" syncable="YES" codeGenerationType="class">
+        <attribute name="agua" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="aguaPorcent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="altura" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="bairro" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cep" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cidade" optional="YES" attributeType="String" syncable="YES"/>
@@ -10,10 +13,22 @@
         <attribute name="endereco" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="estado" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="genero" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gorduraPorcent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idadeMeta" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="massaGorda" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="massaGordaPorcent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="massaMagra" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="massaMagraPorcent" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pesoAtual" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pesoIdeal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pesoMuscular" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pesoOsseo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pesoResidual" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="resultadoImc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="telefone" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Paciente" positionX="-63" positionY="-18" width="128" height="210"/>
+        <element name="Paciente" positionX="-63" positionY="-18" width="128" height="435"/>
     </elements>
 </model>
