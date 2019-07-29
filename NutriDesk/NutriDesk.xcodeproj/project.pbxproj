@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7564E83322EA31310010D607 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7564E83222EA31310010D607 /* UIButtonExtension.swift */; };
 		7564E83522EAA0810010D607 /* DadosPacienteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7564E83422EAA0810010D607 /* DadosPacienteTableViewController.swift */; };
+		758E7F3322EE9F11002E2963 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 758E7F3222EE9F11002E2963 /* StoreKit.framework */; };
 		75A4311C22D65DBC000308DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4311B22D65DBC000308DC /* AppDelegate.swift */; };
 		75A4311E22D65DBC000308DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4311D22D65DBC000308DC /* ViewController.swift */; };
 		75A4312122D65DBC000308DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75A4311F22D65DBC000308DC /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		7564E83222EA31310010D607 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		7564E83422EAA0810010D607 /* DadosPacienteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadosPacienteTableViewController.swift; sourceTree = "<group>"; };
+		758E7F3222EE9F11002E2963 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		75A4311822D65DBC000308DC /* NutriDesk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NutriDesk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A4311B22D65DBC000308DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75A4311D22D65DBC000308DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				758E7F3322EE9F11002E2963 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		758E7F3122EE9F11002E2963 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				758E7F3222EE9F11002E2963 /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		75A4310F22D65DBC000308DC = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +102,7 @@
 				75A4313222D65DC0000308DC /* NutriDeskTests */,
 				75A4313D22D65DC0000308DC /* NutriDeskUITests */,
 				75A4311922D65DBC000308DC /* Products */,
+				758E7F3122EE9F11002E2963 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -208,6 +220,11 @@
 				TargetAttributes = {
 					75A4311722D65DBC000308DC = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					75A4312E22D65DC0000308DC = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -459,7 +476,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = MC2.NutriDesk;
+				PRODUCT_BUNDLE_IDENTIFIER = br.jha.NutriDesk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -477,7 +494,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = MC2.NutriDesk;
+				PRODUCT_BUNDLE_IDENTIFIER = br.jha.NutriDesk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
