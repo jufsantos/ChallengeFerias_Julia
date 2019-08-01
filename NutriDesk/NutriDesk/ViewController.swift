@@ -12,15 +12,6 @@ import UserNotifications
 
 
 class ViewController: UIViewController {
-
-//    let notifications = ["Local Notification",
-//                         "Local Notification with Action",
-//                         "Local Notification with Content",
-//                         "Push Notification with  APNs",
-//                         "Push Notification with Firebase",
-//                         "Push Notification with Content"]
-//    
-//    var appDelegate = UIApplication.shared.delegate as? AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +26,6 @@ class ViewController: UIViewController {
         content.sound = UNNotificationSound.default
         content.threadIdentifier = "Local-notifications temp"
         
-//        let date = Date(timeIntervalSinceNow: 10)
-        
-//        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
-        
-//        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false)
         
@@ -47,13 +33,9 @@ class ViewController: UIViewController {
         
         center.add(request) { (error) in
             if error != nil {
-                print(error)
+                print(error!)
             }
         }
-        
-
     }
-    
-    
 }
 

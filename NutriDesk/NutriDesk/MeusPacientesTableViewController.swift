@@ -54,13 +54,22 @@ class MeusPacientesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 
         if editingStyle == .delete {
+            (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext.delete(userArray[indexPath.row])
             userArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            
+            print("Deletando")
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
             
         } else{
             print("nao apagou")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != nil{
+            if segue.identifier == "verDados"{
+                (segue.destination as! DadosPacienteTableViewController).userIndex = tableView.indexPathForSelectedRow!.row
+            }
         }
     }
     

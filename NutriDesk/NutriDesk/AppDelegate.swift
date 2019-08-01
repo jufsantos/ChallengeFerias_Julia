@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let options: UNAuthorizationOptions = [.alert, .sound, .badge]
         center.requestAuthorization(options: options) { (granted, error) in
             if error != nil{
-                print(error)
+                print(error!)
             }
         }
         center.delegate = self
