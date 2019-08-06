@@ -20,6 +20,8 @@
 		75A4313F22D65DC0000308DC /* NutriDeskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4313E22D65DC0000308DC /* NutriDeskUITests.swift */; };
 		75A4314D22D69EE4000308DC /* MeusPacientesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4314C22D69EE4000308DC /* MeusPacientesTableViewController.swift */; };
 		75A4314F22DD12EB000308DC /* NovosPacientesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4314E22DD12EB000308DC /* NovosPacientesTableViewController.swift */; };
+		75E7F94522F4AF90008296CE /* raleway in Resources */ = {isa = PBXBuildFile; fileRef = 75E7F94422F4AF90008296CE /* raleway */; };
+		75E7F94722F4B2B4008296CE /* lato in Resources */ = {isa = PBXBuildFile; fileRef = 75E7F94622F4B2B4008296CE /* lato */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		75A4314022D65DC0000308DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75A4314C22D69EE4000308DC /* MeusPacientesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeusPacientesTableViewController.swift; sourceTree = "<group>"; };
 		75A4314E22DD12EB000308DC /* NovosPacientesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovosPacientesTableViewController.swift; sourceTree = "<group>"; };
+		75E7F94422F4AF90008296CE /* raleway */ = {isa = PBXFileReference; lastKnownFileType = folder; path = raleway; sourceTree = "<group>"; };
+		75E7F94622F4B2B4008296CE /* lato */ = {isa = PBXFileReference; lastKnownFileType = folder; path = lato; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,8 @@
 		75A4311A22D65DBC000308DC /* NutriDesk */ = {
 			isa = PBXGroup;
 			children = (
+				75E7F94622F4B2B4008296CE /* lato */,
+				75E7F94422F4AF90008296CE /* raleway */,
 				75A4311B22D65DBC000308DC /* AppDelegate.swift */,
 				75A4311F22D65DBC000308DC /* Main.storyboard */,
 				75A4311D22D65DBC000308DC /* ViewController.swift */,
@@ -261,6 +267,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75E7F94722F4B2B4008296CE /* lato in Resources */,
+				75E7F94522F4AF90008296CE /* raleway in Resources */,
 				75A4312922D65DC0000308DC /* LaunchScreen.storyboard in Resources */,
 				75A4312622D65DC0000308DC /* Assets.xcassets in Resources */,
 				75A4312122D65DBC000308DC /* Main.storyboard in Resources */,

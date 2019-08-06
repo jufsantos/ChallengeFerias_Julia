@@ -9,15 +9,14 @@
 import UIKit
 import UserNotifications
 
-
-
 class ViewController: UIViewController {
     
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         let center = UNUserNotificationCenter.current()
-        
         let content = UNMutableNotificationContent()
         
         content.title = "Ei, nutricionista!"
@@ -26,9 +25,7 @@ class ViewController: UIViewController {
         content.sound = UNNotificationSound.default
         content.threadIdentifier = "Local-notifications temp"
         
-        
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false)
-        
         let request = UNNotificationRequest(identifier: "content", content: content, trigger: trigger)
         
         center.add(request) { (error) in

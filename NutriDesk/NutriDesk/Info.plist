@@ -2,8 +2,50 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Raleway-Black.ttf</string>
+		<string>Raleway - BlackItalic.ttf</string>
+		<string>Raleway-Bold.ttf</string>
+		<string>Raleway - BoldItalic.ttf</string>
+		<string>Raleway - ExtraBold.ttf</string>
+		<string>Raleway - ExtraBoldItalic.ttf</string>
+		<string>Raleway - ExtraLight.ttf</string>
+		<string>Raleway - ExtraLightItalic.ttf</string>
+		<string>Raleway - Italic.ttf</string>
+		<string>Raleway - Light.ttf</string>
+		<string>Raleway - LightItalic.ttf</string>
+		<string>Raleway - Medium.ttf</string>
+		<string>Raleway - MediumItalic.ttf</string>
+		<string>Raleway-Regular.ttf</string>
+		<string>Raleway - SemiBold.ttf</string>
+		<string>Raleway - SemiBoldItalic.ttf</string>
+		<string>Raleway - Thin.ttf</string>
+		<string>Raleway - ThinItalic.ttf</string>
+		<string>Lato-Black.ttf</string>
+		<string>Lato-Black.ttf</string>
+		<string>Lato-Bold.ttf</string>
+		<string>Lato-BoldItalic.ttf</string>
+		<string>Lato-Hairline.ttf</string>
+		<string>Lato-HairlineItalic.ttf</string>
+		<string>Lato-Heavy.ttf</string>
+		<string>Lato-HeavyItalic.ttf</string>
+		<string>Lato-Italic.ttf</string>
+		<string>Lato-Light.ttf</string>
+		<string>Lato-LightItalic.ttf</string>
+		<string>Lato-Medium.ttf</string>
+		<string>Lato-MediumItalic.ttf</string>
+		<string>Lato-Regular.ttf</string>
+		<string>Lato-SemiBold.ttf</string>
+		<string>Lato-SemiBoldItalic.ttf</string>
+		<string>Lato-Thin.ttf</string>
+		<string>Lato-ThinItalic.ttf</string>
+	</array>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>Portuguese</string>
+		<string>en</string>
+	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

@@ -11,48 +11,66 @@ import CoreData
 import UserNotifications
 
 class MeusPacientesTableViewController: UITableViewController {
-
+    
     let container = NSPersistentContainer(name: "NutriDesk")
     
     var appDelegate = UIApplication.shared.delegate as? AppDelegate
-
+    
     var userArray: [Paciente] = []
+    
+    var filter: [Paciente] = []
+    
+    let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
-
+        
         self.fetchData()
         self.tableView.reloadData()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        navigationItem.hidesSearchBarWhenScrolling  = false
+        navigationItem.searchController = searchController
+        
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.tintColor = #colorLiteral(red: 0.7842261195, green: 0.2227489948, blue: 0.1612006426, alpha: 1)
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Pesquisar paciente"
+        
+        definesPresentationContext = true
+        
+        tableView.reloadData()
     }
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if pesquisa(){
+            return filter.count
+        }
         return userArray.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellNome = tableView.dequeueReusableCell(withIdentifier: "cellNome", for: indexPath)
         let nomePaciente = userArray[indexPath.row]
         cellNome.textLabel!.text = nomePaciente.nome!
-
+        //                cellNome.textLabel?.font = UIFont (name: "Raleway-Bold", size: UIFont.systemFontSize)
+        
+        if pesquisa(){
+            let nomePacienteSearch = filter[indexPath.row]
+            cellNome.textLabel!.text = nomePacienteSearch.nome
+        }
         return cellNome
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-
+        
         if editingStyle == .delete {
             (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext.delete(userArray[indexPath.row])
             userArray.remove(at: indexPath.row)
@@ -84,49 +102,25 @@ class MeusPacientesTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-
-    // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return true
     }
+    func searchBarIsEmpty() -> Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
     
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-
+    func pesquisa() -> Bool {
+        return searchController.isActive && !searchBarIsEmpty()
+    }
     
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    func filterContent(searchText: String) {
+        filter = userArray.filter { $0.nome!.lowercased().contains(searchText.lowercased()) }
+        
+        tableView.reloadData()
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+}
+extension MeusPacientesTableViewController: UISearchResultsUpdating{
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContent(searchText: searchController.searchBar.text!)
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
