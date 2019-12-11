@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75409FC4239EE51A00A557EC /* AutenticarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75409FC3239EE51A00A557EC /* AutenticarViewController.swift */; };
 		7564E83322EA31310010D607 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7564E83222EA31310010D607 /* UIButtonExtension.swift */; };
 		7564E83522EAA0810010D607 /* DadosPacienteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7564E83422EAA0810010D607 /* DadosPacienteTableViewController.swift */; };
-		758E7F3322EE9F11002E2963 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 758E7F3222EE9F11002E2963 /* StoreKit.framework */; };
 		75A4311C22D65DBC000308DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4311B22D65DBC000308DC /* AppDelegate.swift */; };
 		75A4311E22D65DBC000308DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4311D22D65DBC000308DC /* ViewController.swift */; };
 		75A4312122D65DBC000308DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75A4311F22D65DBC000308DC /* Main.storyboard */; };
@@ -42,9 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		75409FC3239EE51A00A557EC /* AutenticarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutenticarViewController.swift; sourceTree = "<group>"; };
 		7564E83222EA31310010D607 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		7564E83422EAA0810010D607 /* DadosPacienteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadosPacienteTableViewController.swift; sourceTree = "<group>"; };
-		758E7F3222EE9F11002E2963 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		75A4311822D65DBC000308DC /* NutriDesk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NutriDesk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A4311B22D65DBC000308DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75A4311D22D65DBC000308DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				758E7F3322EE9F11002E2963 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +93,6 @@
 		758E7F3122EE9F11002E2963 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				758E7F3222EE9F11002E2963 /* StoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -127,6 +125,7 @@
 				75E7F94422F4AF90008296CE /* raleway */,
 				75A4311B22D65DBC000308DC /* AppDelegate.swift */,
 				75A4311F22D65DBC000308DC /* Main.storyboard */,
+				75409FC3239EE51A00A557EC /* AutenticarViewController.swift */,
 				75A4311D22D65DBC000308DC /* ViewController.swift */,
 				75A4314C22D69EE4000308DC /* MeusPacientesTableViewController.swift */,
 				75A4314E22DD12EB000308DC /* NovosPacientesTableViewController.swift */,
@@ -301,6 +300,7 @@
 				75A4314F22DD12EB000308DC /* NovosPacientesTableViewController.swift in Sources */,
 				75A4312422D65DBC000308DC /* NutriDesk.xcdatamodeld in Sources */,
 				75A4314D22D69EE4000308DC /* MeusPacientesTableViewController.swift in Sources */,
+				75409FC4239EE51A00A557EC /* AutenticarViewController.swift in Sources */,
 				75A4311C22D65DBC000308DC /* AppDelegate.swift in Sources */,
 				7564E83322EA31310010D607 /* UIButtonExtension.swift in Sources */,
 			);

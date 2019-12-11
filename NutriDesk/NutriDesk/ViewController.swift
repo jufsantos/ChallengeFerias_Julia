@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LocalAuthentication
 import UserNotifications
 
 class ViewController: UIViewController {

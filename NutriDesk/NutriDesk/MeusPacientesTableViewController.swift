@@ -35,7 +35,6 @@ class MeusPacientesTableViewController: UITableViewController {
         navigationItem.searchController = searchController
         
         searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.tintColor = #colorLiteral(red: 0.7842261195, green: 0.2227489948, blue: 0.1612006426, alpha: 1)
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Pesquisar paciente"
@@ -60,7 +59,6 @@ class MeusPacientesTableViewController: UITableViewController {
         let cellNome = tableView.dequeueReusableCell(withIdentifier: "cellNome", for: indexPath)
         let nomePaciente = userArray[indexPath.row]
         cellNome.textLabel!.text = nomePaciente.nome!
-        //                cellNome.textLabel?.font = UIFont (name: "Raleway-Bold", size: UIFont.systemFontSize)
         
         if pesquisa(){
             let nomePacienteSearch = filter[indexPath.row]

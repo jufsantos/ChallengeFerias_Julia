@@ -112,6 +112,13 @@ class NovosPacientesTableViewController: UITableViewController, UITextFieldDeleg
             
             DispatchQueue.main.async {
                 self.present(self.alerta, animated: true, completion: nil)
+                if self.button.isSelected == false {
+                    self.button.backgroundColor = #colorLiteral(red: 0.7842261195, green: 0.2227489948, blue: 0.1612006426, alpha: 1)
+                    self.button.setTitleColor(#colorLiteral(red: 0.9804118276, green: 0.977494061, blue: 0.9026097059, alpha: 1), for: .normal)
+                    } else {
+                    self.button.backgroundColor = #colorLiteral(red: 0.9804118276, green: 0.977494061, blue: 0.9026097059, alpha: 1)
+                    self.button.setTitleColor(#colorLiteral(red: 0.7821950912, green: 0.2211945653, blue: 0.1616751552, alpha: 1), for: .normal)
+                    }
             }
         }
     }
